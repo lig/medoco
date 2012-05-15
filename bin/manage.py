@@ -1,0 +1,1 @@
+../medoco/face/manage.py
