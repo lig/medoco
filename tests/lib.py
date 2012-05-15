@@ -33,12 +33,15 @@ class InfoTest(unittest.TestCase):
         self.assertEqual(document_info.name, 'Document')
 
     def test_field_info(self):
+        """
+        Based on the complicated ComplexDateTimeField that is twice subclassed
+        """
         field_info = FieldInfo(ComplexDateTimeField)
         self.assertEqual(field_info.klass, ComplexDateTimeField)
         self.assertEqual(field_info.name, 'ComplexDateTimeField')
-        self.assertEqual(
-            field_info.attrs,
-            ['separator', 'regex', 'max_length', 'min_length', 'db_field',
-                'name', 'required', 'default', 'unique', 'unique_with',
-                'primary_key', 'validation', 'choices', 'verbose_name',
-                'help_text'])
+        self.assertListEqual(
+            sorted(field_info.attrs),
+            ['choices', 'db_field', 'default', 'help_text', 'max_length',
+                'min_length', 'name', 'primary_key', 'regex', 'required',
+                'separator', 'unique', 'unique_with', 'validation',
+                'verbose_name'])
