@@ -7,7 +7,7 @@ $(function() {
 			url += e.value;
 		}
 		$('#medoco-content').load(url, function() {
-			$('a.medoco-ajax-link').click(function(e) {
+			$('a.medoco-ajax').click(function(e) {
 				$.address.value($(this).attr('href'));
 				return false;
 			});

@@ -23,7 +23,7 @@ class DashView(TemplateView):
 
 
 class TypeView(MedocoAjaxView):
-    pass
+    template_name = 'medoco/type.html'
 
 
 class TypeListView(MedocoAjaxView):

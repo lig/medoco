@@ -1,9 +1,9 @@
-.medoco-ajax-link {
+a.medoco-ajax {
 	cursor: crosshair;
 	cursor: pointer;
 	border-bottom: 1px dashed;
 }
-.medoco-ajax-link:hover {
+a.medoco-ajax:hover {
     text-decoration: none;
     border-bottom: none;
 }
