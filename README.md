@@ -2,7 +2,7 @@
 
 ## About
 
-Medoco (`MongoEngine DOcument COnfigurator`) is a web interface and a library for configuring MongoEngine documents via interface GUI or programmable using its library part.
+Medoco (_MongoEngine DOcument COnfigurator_) is a web interface and a library for configuring MongoEngine documents via interface GUI or programmable using its library part.
 
 These document classes could be loaded in runtime then from database.
 
