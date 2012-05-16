@@ -7,9 +7,11 @@ $(function() {
 			url += e.value;
 		}
 		$('#medoco-content').load(url, function() {
-			$('a.medoco-ajax').click(function(e) {
-				$.address.value($(this).attr('href'));
-				return false;
+			$('a.medoco-ajax').mousedown(function(e) {
+				if (e.which == 1) {
+					$.address.value($(this).attr('href'));
+					return false;
+				}
 			});
 		});
 	});
