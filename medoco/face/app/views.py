@@ -2,6 +2,8 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
+from forms import TypeForm
+
 
 __all__ = ['DashView', 'TypeView', 'TypeListView', 'TypeDeleteView']
 
@@ -32,7 +34,7 @@ class TypeView(MedocoAjaxView):
         else:
 
             if self.request.method == 'POST':
-                type_form = TypeForm(request.POST)
+                type_form = TypeForm(self.request.POST)
 
                 if type_form.is_valid():
                     pass
