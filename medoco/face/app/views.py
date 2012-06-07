@@ -25,6 +25,23 @@ class DashView(TemplateView):
 class TypeView(MedocoAjaxView):
     template_name = 'medoco/type.html'
 
+    def get_context_data(self, **kwargs):
+
+        if 'type_id' in kwargs:
+            pass
+        else:
+
+            if self.request.method == 'POST':
+                type_form = TypeForm(request.POST)
+
+                if type_form.is_valid():
+                    pass
+
+            else:
+                type_form = TypeForm()
+
+        return {'type_form': type_form}
+
 
 class TypeListView(MedocoAjaxView):
     template_name = 'medoco/type_list.html'
