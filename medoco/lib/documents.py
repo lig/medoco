@@ -13,7 +13,8 @@ class FieldSpec(EmbeddedDocument):
 
 
 class DocumentSpec(Document):
-    name = StringField(required=True, unique=True)  # @note: primary_key?
-    tipe = StringField(required=True, choices=document_data.keys())
+    # @note: primary_key?
+    name = StringField(max_length=255, required=True, unique=True)
+    type_ = StringField(required=True, choices=document_data.keys())
     bases = ListField(ReferenceField(RECURSIVE_REFERENCE_CONSTANT))
     fields = ListField(EmbeddedDocumentField(FieldSpec))
