@@ -5,8 +5,11 @@ from views import *
 
 urlpatterns = patterns('',
     url(r'^$', DashView.as_view(), name='medoco_dash'),
-    url(r'^type/new$', TypeView.as_view(), name='medoco_type_new'),
-    url(r'^type/list$', TypeListView.as_view(), name='medoco_type_list'),
-    url(r'^type/(?P<type_id>\w+)$', TypeView.as_view(), name='medoco_type'),
-    url(r'^type/delete$', TypeDeleteView.as_view(), name='medoco_type_delete'),
+    url(r'^docspec/new$', DocSpecView.as_view(), name='medoco_doc_spec_new'),
+    url(r'^docspec/list$', DocSpecListView.as_view(),
+        name='medoco_doc_spec_list'),
+    url(r'^docspec/(?P<doc_spec_id>\w+)$', DocSpecView.as_view(),
+        name='medoco_doc_spec'),
+    url(r'^docspec/delete$', DocSpecDeleteView.as_view(),
+        name='medoco_doc_spec_delete'),
 )

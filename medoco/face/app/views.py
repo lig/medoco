@@ -2,10 +2,10 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
-from forms import TypeForm
+from forms import DocumentSpecForm
 
 
-__all__ = ['DashView', 'TypeView', 'TypeListView', 'TypeDeleteView']
+__all__ = ['DashView', 'DocSpecView', 'DocSpecListView', 'DocSpecDeleteView']
 
 
 class MedocoAjaxView(TemplateView):
@@ -24,30 +24,30 @@ class DashView(TemplateView):
     template_name = 'medoco/dash.html'
 
 
-class TypeView(MedocoAjaxView):
-    template_name = 'medoco/type.html'
+class DocSpecView(MedocoAjaxView):
+    template_name = 'medoco/doc_spec.html'
 
     def get_context_data(self, **kwargs):
 
-        if 'type_id' in kwargs:
+        if 'doc_spec_id' in kwargs:
             pass
         else:
 
             if self.request.method == 'POST':
-                type_form = TypeForm(self.request.POST)
+                doc_spec_form = DocumentSpecForm(self.request.POST)
 
-                if type_form.is_valid():
+                if doc_spec_form.is_valid():
                     pass
 
             else:
-                type_form = TypeForm()
+                doc_spec_form = DocumentSpecForm()
 
-        return {'type_form': type_form}
-
-
-class TypeListView(MedocoAjaxView):
-    template_name = 'medoco/type_list.html'
+        return {'doc_spec_form': doc_spec_form}
 
 
-class TypeDeleteView(MedocoAjaxView):
+class DocSpecListView(MedocoAjaxView):
+    template_name = 'medoco/doc_spec_list.html'
+
+
+class DocSpecDeleteView(MedocoAjaxView):
     pass

@@ -1,14 +1,14 @@
 {% load medoco_tags %}
 <ul class="breadcrumb">
-	<li><a class="medoco-ajax" href="{% medoco_url medoco_type_list %}">Types</a> <span class="divider">/</span></li>
-	{% if type.pk %}
-    <li class="active">{{ type.name }}</li>
+	<li><a class="medoco-ajax" href="{% medoco_url medoco_doc_spec_list %}">Document specifications</a> <span class="divider">/</span></li>
+	{% if doc_spec.pk %}
+    <li class="active">{{ doc_spec.name }}</li>
     {% else %}
-    <li class="active"><i class="icon-plus"></i>New type</li>
+    <li class="active"><i class="icon-plus"></i>New document specification</li>
     {% endif %}
 </ul>
 <form class="medoco-ajax" action="" method="post">{% csrf_token %}
-    {{ type_form }}
+    {{ doc_spec_form }}
     <div class="form-actions">
         <button type="submit" class="btn btn-primary">Save</button>
         <button class="btn" onclick="history.back(); return false;">Cancel</button>
